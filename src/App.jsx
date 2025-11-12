@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import StudentUI from './components/StudentUI'
+import AdminUI from './components/AdminUI'
+import InvigilatorMobile from './components/InvigilatorMobile'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white">
+      <Hero />
+      <section id="student">
+        <StudentUI />
+      </section>
+      <section id="admin">
+        <AdminUI />
+      </section>
+      <section id="invigilator" className="bg-[#F8FAFF]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <h3 className="text-2xl font-bold mb-6">Invigilator (Mobile Preview)</h3>
+          <div className="mx-auto max-w-md rounded-3xl border shadow">
+            <InvigilatorMobile />
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
-
-export default App
